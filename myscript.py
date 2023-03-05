@@ -1,5 +1,30 @@
-from bankaccount import BankAccount
+"""
+ATM system for the STRONG bank.
+
+This script implements a simple ATM system for the STRONG bank
+using the BankAccount class from the bankaccount module.
+
+Usage:
+    - Enter your starting bank account balance when prompted.
+    - Choose an action from the menu by entering the corresponding number.
+    - Follow the prompts to complete the selected action.
+
+Actions:
+    1. Deposit: Add funds to the account.
+    2. Withdraw: Remove funds from the account.
+    3. Check balance: Display the current balance of the account.
+    4. Close: Exit the ATM system.
+
+This script requires the following modules to be imported:
+    - enum
+    - bankaccount
+
+Author: Michal Mocny
+Date: 05.03.2023
+"""
+
 from enum import IntEnum
+from bankaccount import BankAccount
 
 startedBalance = float(input("Enter your starting bank account balance: "))
 myAccount = BankAccount(startedBalance)
@@ -7,7 +32,7 @@ myAccount = BankAccount(startedBalance)
 Menu_ATM = IntEnum(
     "Menu_ATM", ["Deposit", "Withdraw", "Check_balance", "Close"])
 
-while (True):
+while True:
     try:
         disposition = int(input("""
         Welcome to STRONG's ATM. Choose what you want to do.
