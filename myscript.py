@@ -34,7 +34,10 @@ while True:
     except ValueError:
         print("Wrong value. Enter a number value.")
     else:
-        break
+        if startedBalance >= 0:
+            break
+
+        print("The value must be a positive value or 0.")
 
 Menu_ATM = IntEnum(
     "Menu_ATM", ["Deposit", "Withdraw", "Check_balance", "Close"])
