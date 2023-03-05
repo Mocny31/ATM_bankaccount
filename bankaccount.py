@@ -37,7 +37,7 @@ class BankAccount:
             return Error("The account balance is too low, you cannot make a withdrawal.", amount)
 
     def check_balance_account(self):
-        return "Your account balance: " + str(self.balance)
+        return f"Your account balance: {self.balance}"
 
     def __str__(self):
-        return "The account is assigned id nr " + str(self.user_id) + "and its balance " + str(self.balance)
+        return f"The account is assigned id nr {self.user_id} and its balance is {self.balance}"
