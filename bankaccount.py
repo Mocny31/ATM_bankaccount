@@ -1,6 +1,6 @@
 class Result:
     def __init__(self, message, value=None):
-        self.isSucces = None
+        self.is_success = None
         self.message = message
         self.value = value
 
@@ -8,13 +8,13 @@ class Result:
 class Ok(Result):
     def __init__(self, message, value=None):
         super().__init__(message, value)
-        self.isSucces = True
+        self.is_success = True
 
 
 class Error(Result):
     def __init__(self, message, value=None):
         super().__init__(message, value)
-        self.isSucces = False
+        self.is_success = False
 
 
 class BankAccount:
@@ -22,7 +22,7 @@ class BankAccount:
 
     def __init__(self, balance: float = 0):
         self.balance = balance
-        self.id = BankAccount.nextId
+        self.user_id = BankAccount.nextId
         BankAccount.nextId += 1
 
     def deposit(self, amount):
@@ -40,4 +40,4 @@ class BankAccount:
         return "Your account balance: " + str(self.balance)
 
     def __str__(self):
-        return "The account is assigned id nr " + str(self.id) + "and its balance " + str(self.balance)
+        return "The account is assigned id nr " + str(self.user_id) + "and its balance " + str(self.balance)
