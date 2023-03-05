@@ -18,12 +18,12 @@ class Error(Result):
 
 
 class BankAccount:
-    nextId = 1
+    next_id = 1
 
     def __init__(self, balance: float = 0):
         self.balance = balance
-        self.user_id = BankAccount.nextId
-        BankAccount.nextId += 1
+        self.user_id = BankAccount.next_id
+        BankAccount.next_id += 1
 
     def deposit(self, amount):
         self.balance += amount

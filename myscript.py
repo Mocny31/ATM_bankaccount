@@ -28,13 +28,13 @@ from bankaccount import BankAccount
 
 while True:
     try:
-        startedBalance = float(
+        started_balance = float(
             input("Enter your starting bank account balance: "))
-        myAccount = BankAccount(startedBalance)
+        my_account = BankAccount(started_balance)
     except ValueError:
         print("Wrong value. Enter a number value.")
     else:
-        if startedBalance >= 0:
+        if started_balance >= 0:
             break
 
         print("The value must be a positive value or 0.")
@@ -56,17 +56,17 @@ while True:
             if value <= 0:
                 print("Wrong value.")
             else:
-                result = myAccount.deposit(value)
+                result = my_account.deposit(value)
                 print(result.message)
         elif disposition == Menu_ATM.Withdraw:
             value = int(input("Enter the amount to be withdrawn: "))
             if value <= 0:
                 print("Wrong value.")
             else:
-                result = myAccount.withdraw(value)
+                result = my_account.withdraw(value)
                 print(result.message)
         elif disposition == Menu_ATM.Check_balance:
-            print(myAccount.check_balance_account())
+            print(my_account.check_balance_account())
         elif disposition == Menu_ATM.Close:
             break
         else:
