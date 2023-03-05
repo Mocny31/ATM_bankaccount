@@ -26,8 +26,15 @@ Date: 05.03.2023
 from enum import IntEnum
 from bankaccount import BankAccount
 
-startedBalance = float(input("Enter your starting bank account balance: "))
-myAccount = BankAccount(startedBalance)
+while True:
+    try:
+        startedBalance = float(
+            input("Enter your starting bank account balance: "))
+        myAccount = BankAccount(startedBalance)
+    except ValueError:
+        print("Wrong value. Enter a number value.")
+    else:
+        break
 
 Menu_ATM = IntEnum(
     "Menu_ATM", ["Deposit", "Withdraw", "Check_balance", "Close"])
