@@ -39,8 +39,8 @@ while True:
 
         print("The value must be a positive value or 0.")
 
-Menu_ATM = IntEnum(
-    "Menu_ATM", ["Deposit", "Withdraw", "Check_balance", "Close"])
+menu_atm = IntEnum(
+    "menu_atm", ["Deposit", "Withdraw", "Check_balance", "Close"])
 
 while True:
     try:
@@ -51,23 +51,23 @@ while True:
         3. Check_balance
         4. Close
         Your choose: """))
-        if disposition == Menu_ATM.Deposit:
+        if disposition == menu_atm.Deposit:
             value = int(input("Enter the amount to be deposited: "))
             if value <= 0:
                 print("Wrong value.")
             else:
                 result = my_account.deposit(value)
                 print(result.message)
-        elif disposition == Menu_ATM.Withdraw:
+        elif disposition == menu_atm.Withdraw:
             value = int(input("Enter the amount to be withdrawn: "))
             if value <= 0:
                 print("Wrong value.")
             else:
                 result = my_account.withdraw(value)
                 print(result.message)
-        elif disposition == Menu_ATM.Check_balance:
+        elif disposition == menu_atm.Check_balance:
             print(my_account.check_balance_account())
-        elif disposition == Menu_ATM.Close:
+        elif disposition == menu_atm.Close:
             break
         else:
             print("Wrong value.")
